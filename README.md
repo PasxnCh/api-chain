@@ -18,11 +18,11 @@
 git clone https://github.com/PasxnCh/api-chain.git
 cd api-chain
 ```
-2. Build & Start Containers
+### 2. Build & Start Containers
 ```
 docker-compose up --build
 ```
-3. Verify Startup Logs
+### 3. Verify Startup Logs
 - API1:
 ```
 [API1] Listening at http://localhost:3001
@@ -41,6 +41,6 @@ Expected Response:
 ```
 API1 says: Hello World from API2
 ```
-Directly test API2 (optional)
+### Directly test API2 (optional)
 ```
 curl http://localhost:3002/api2

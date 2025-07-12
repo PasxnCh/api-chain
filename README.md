@@ -15,7 +15,7 @@
 
 ### 1. Clone Repository
 ```bash
-git clone https://github.com/<your-username>/api-chain.git
+git clone https://github.com/PasxnCh/api-chain.git
 cd api-chain
 ```
 2. Build & Start Containers

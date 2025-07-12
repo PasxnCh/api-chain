@@ -1,6 +1,6 @@
-# 🔗 API Chain Project
+# 🔗 API Chain
 
-## 📘 Overview
+## Overview
 
 โปรเจกต์นี้ใช้ Node.js + Express เพื่อสร้าง API สองตัว:
 
@@ -11,7 +11,7 @@
 
 ---
 
-## 🚀 How to Deploy
+## How to Deploy
 
 ### 1. Clone Repository
 ```bash
@@ -31,8 +31,9 @@ docker-compose up --build
 ```
 [API2] Listening at http://localhost:3002
 ```
-How to Test
-Test API Chain via API1
+## How to Test
+
+### Test API Chain via API1
 ```
 curl http://localhost:3001/api1
 ```

@@ -1,12 +1,13 @@
-# 🔗 API Chain
+# 🔗 API Chain Project
 
-## 👨‍💻 Overview
-โปรเจกต์นี้ประกอบด้วย API สองตัว:
+## 📘 Overview
 
-- **API1** (Port 3001): รับ request จากผู้ใช้ แล้วส่งต่อไปยัง API2
-- **API2** (Port 3002): ตอบกลับข้อความ "Hello World"
+โปรเจกต์นี้ใช้ Node.js + Express เพื่อสร้าง API สองตัว:
 
-การเรียกใช้งานจะทำงานเป็น chain: ผู้ใช้เรียก API1 → API1 เรียก API2 → ส่งผลลัพธ์กลับไปยังผู้ใช้
+- **API1** (`localhost:3001`): รับ request จากผู้ใช้ → ส่งต่อไปยัง API2 → ตอบกลับผลลัพธ์
+- **API2** (`localhost:3002`): ตอบกลับข้อความ "Hello World from API2"
+
+ทั้งหมด deploy ผ่าน Docker Compose และมีการพิมพ์ logs ให้เห็นทั้งฝั่ง API1 และ API2
 
 ---
 
@@ -14,31 +15,31 @@
 
 ### 1. Clone Repository
 ```bash
-git clone https://github.com/PasxnCh/api-chain.git
+git clone https://github.com/<your-username>/api-chain.git
 cd api-chain
 ```
-### 2. Build and Start Containers
-```bash
+2. Build & Start Containers
+```
 docker-compose up --build
 ```
-- API1 จะรันที่ localhost http://localhost:3001/api1
-- API2 จะรันที่ localhost http://localhost:3002/api2
-
- How to Test
-Test API1 → API2 Chain
+3. Verify Startup Logs
+- API1:
+```
+[API1] Listening at http://localhost:3001
+```
+- API2:
+```
+[API2] Listening at http://localhost:3002
+```
+How to Test
+Test API Chain via API1
 ```
 curl http://localhost:3001/api1
 ```
-Expected response:
-hello world from API2
-
-📋 Logs
-เมื่อเรียก API1:
-- API1 log:
+Expected Response:
 ```
-Request received on API1
-Response from API2: hello world from API2
+API1 says: Hello World from API2
 ```
-- API2 log:
+Directly test API2 (optional)
 ```
-Request received on API2
+curl http://localhost:3002/api2
